@@ -25,8 +25,8 @@ const UNITS = [
 ]
 
 export default function Countdown() {
-  const [eventName, setEventName] = useLocalStorage('sp.eventName', '暑假开始')
-  const [eventDate, setEventDate] = useLocalStorage('sp.eventDate', '2026-07-01')
+  const [eventName, setEventName] = useLocalStorage('sp.countdownName', '暑假结束')
+  const [eventDate, setEventDate] = useLocalStorage('sp.countdownDate', '2026-08-31')
   const [remaining, setRemaining] = useState(() => calcRemaining(eventDate))
   const [editing, setEditing] = useState(false)
 
@@ -65,7 +65,7 @@ export default function Countdown() {
       )}
 
       {remaining.past ? (
-        <p className="past-msg">{eventName} 已经开始啦 🎉 好好享受暑假！</p>
+        <p className="past-msg">{eventName}啦 🎓 收心迎接新学期，加油！</p>
       ) : (
         <div className="countdown-grid">
           {UNITS.map((u) => (
